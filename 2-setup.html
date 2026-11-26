@@ -1,0 +1,5 @@
+<!doctype html><meta charset=utf-8><meta name=viewport content="width=device-width"><title>Setup</title>
+<form id=f style="font-family:sans-serif;max-width:320px;margin:60px auto"><h3>Owner setup</h3><input id=u value="ahmed.othman" style="display:block;width:100%;margin:8px 0;padding:10px"><input id=p type=password placeholder=password style="display:block;width:100%;margin:8px 0;padding:10px"><button>Create</button><pre id=o></pre></form>
+<script>
+document.getElementById('f').onsubmit=function(e){e.preventDefault();fetch('https://ckltdtdrektkjupjywgd.supabase.co/rest/v1/rpc/init_owner',{method:'POST',headers:{apikey:'sb_publishable_uzJ-tolS1O9xkr8SKC_EjQ_G5Tonit3','Content-Type':'application/json'},body:JSON.stringify({u:document.getElementById('u').value,p:document.getElementById('p').value,code:location.hash.slice(1)})}).then(r=>r.json()).then(r=>{document.getElementById('o').textContent=JSON.stringify(r);document.getElementById('p').value=''})}
+</script>
