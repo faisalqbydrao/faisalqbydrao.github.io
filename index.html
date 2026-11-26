@@ -117,4 +117,4 @@ function res(){const w=D.map((q,k)=>k).filter(k=>ans[k]!==D[k].a),sc=D.length-w.
 return `<p class="mute">${cur=='R'?RN:t('ch')+' '+cur} · ${t('res')}${timeup?' · '+t('up'):''}</p><p class="score">${sc} / ${D.length}</p><p class="mute">${t('used')}: ${Math.floor(used/60)}:${String(used%60).padStart(2,'0')}</p><button class="btn" onclick="start()">${t('again')}</button><button class="btn alt" onclick="go('home')">${t('home')}</button>${w.length?`<h3>${t('rev')} (${w.length})</h3>`+w.map(rv).join(''):`<p>${t('none')}</p>`}`}
 function render(){const d=document.documentElement;d.lang=L;d.dir=L=='ar'?'rtl':'ltr';$('#lang').textContent=L=='ar'?'English':'العربية';contact();$('#app').innerHTML=v=='home'?home():'<div class="nw">'+{quiz,res}[v]()+'</div>'}
 render();
-</script><script src="28-patch.js"></script></body></html>
+</script><script src="28-patch.js"></script><script src="3-29-layout.js"></script></body></html>
