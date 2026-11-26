@@ -8,7 +8,7 @@ function sm(icon,title){return '<summary class="gs">'+ico(icon)+'<span>'+title+'
 function grp(cls,icon,title,inner,open){return '<details class="g '+cls+'"'+(open?' open':'')+'>'+sm(icon,title)+inner+'</details>'}
 function sub(cls,title,items,fn,open){return '<details class="g '+cls+'"'+(open?' open':'')+'><summary>'+title+'</summary>'+items.map(fn).join('')+'</details>'}
 function term(cls,title,chs,lbs,open){
- return grp(cls,'book',title,sub(cls,tx('Chapters','الفصول'),chs,chc,open)+sub(cls,tx('Labs','اللابات'),lbs,lab,0),open)}
+ return grp(cls,'book',title,sub(cls,tx('Chapters','الفصول'),chs,chc,1)+sub(cls,tx('Labs','اللابات'),lbs,lab,0),0)}
 window.home=home=function(){
  var upp=grp('u','cells',t('upp'),term('t1',tx('Term 1','الترم الأول'),CH,L1,1)+term('t2',tx('Term 2','الترم التاني'),CH2,L2,0),1);
  var y1=grp('y','body',t('fy'),FY.map(fyc).join(''),0);
