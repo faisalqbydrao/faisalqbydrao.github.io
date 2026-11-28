@@ -3,7 +3,7 @@ var ST=null,KY='sb_publishable_uzJ-tolS1O9xkr8SKC_EjQ_G5Tonit3',U='https://ckltd
 var T=function(e,a){return typeof L!=='undefined'&&L=='ar'?a:e};
 var isS=function(){return ST&&ST.role&&ST.role!=='owner'&&ST.username};
 var st=document.createElement('style');
-st.textContent='.fqdone{display:block;margin-top:8px;padding:6px 10px;border-radius:8px;background:#dcfce7;color:#166534;font-weight:700;font-size:14px;line-height:1.5}.fqban{margin:0 0 14px;padding:14px 16px;border-radius:12px;background:#dcfce7;color:#166534;font-weight:700;font-size:17px;border:2px solid #22c55e}';
+st.textContent='.card:has(.fqdone){flex-wrap:wrap}.fqdone{flex-basis:100%;display:block;margin-top:8px;padding:6px 10px;border-radius:8px;background:#dcfce7;color:#166534;font-weight:700;font-size:14px;line-height:1.5}.fqban{margin:0 0 14px;padding:14px 16px;border-radius:12px;background:#dcfce7;color:#166534;font-weight:700;font-size:17px;border:2px solid #22c55e}';
 document.head.appendChild(st);
 function ld(){try{return JSON.parse(localStorage.getItem('fq_prog_v1_'+ST.username)||'{}')}catch(e){return{}}}
 function cnt(all,k){var p=all[k];return p&&!p.del&&p.a?Object.keys(p.a).length:0}
