@@ -15,6 +15,6 @@ if(m[1]=='start'){dn=cnt(all,key)}else{var sm=0;Object.keys(BANK).forEach(functi
 if(dn<tot)return;if(m[1]=='start')markFin(all,key);
 b.insertAdjacentHTML('beforeend','<span class="fqdone">✅ '+T('Chapter completed. Great work, keep going! Tap to retake it.','خلّصت الشابتر ده، شغل ممتاز كمل كده! اضغط لو عايز تعيد المحاولة.')+'</span>')})}
 function ban(){if(!isS()||typeof D==='undefined'||!D||!D.length)return;var n=0;for(var i=0;i<D.length;i++)if(ans[i]!==undefined)n++;if(n<D.length)return;var w=document.querySelector('#app .nw');if(!w||w.querySelector('.fqban'))return;w.insertAdjacentHTML('afterbegin','<div class="fqban">🎉 '+T('Chapter completed! Great work. You can open the next chapter, or retake this one from the chapter list.','مبروك خلّصت الشابتر كله! شغل ممتاز. تقدر تفتح الشابتر اللي بعده، أو تعيد ده من قايمة الشباتر.')+'</div>')}
-var _r=render;window.render=render=function(){_r();try{if(v=='home'||v=='sec')deco();else if(v=='res')ban()}catch(e){console.error('done',e)}};
-window.__fqRoleP().then(function(c){ST=c;if(isS()&&(v=='home'||v=='sec'))render()});
+var _r=render;window.render=render=function(){_r();try{if(!ST){window.__fqRoleP().then(function(c){if(c&&!ST){ST=c;if(isS()&&(v=='home'||v=='sec'||v=='res'))render()}});return}if(v=='home'||v=='sec')deco();else if(v=='res')ban()}catch(e){console.error('done',e)}};
+window.__fqRoleP().then(function(c){if(c&&!ST){ST=c;if(isS()&&(v=='home'||v=='sec'))render()}});
 }catch(e){console.error('done',e)}})();
