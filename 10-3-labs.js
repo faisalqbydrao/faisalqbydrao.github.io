@@ -24,3 +24,5 @@ window.res=res=function(){var h=_r();var k=String(cur);if(LI[k])h=h.replace(/(Ch
 if(v=='home')render();
 }catch(e){console.error('labs',e)}})();
 ;(function(){try{var q0=window.quiz;if(typeof q0!=='function')return;var st=document.createElement('style');st.textContent='.pnr{display:flex;gap:10px;margin-top:12px}.pnr .btn{flex:1;margin-top:0}';document.head.appendChild(st);window.prevq=function(){var c=[].slice.call(document.querySelectorAll('.qg .qn')),i=c.findIndex(function(x){return x.classList.contains('cu')});if(i>0){c[i-1].click()}};window.quiz=function(){var h=q0.apply(this,arguments);if(typeof h!=='string')return h;var m='<button class="btn" onclick="nextq()">';var p=h.indexOf(m);if(p<0)return h;var e=h.indexOf('</button>',p)+9;var nb=h.slice(p,e);var ar=typeof L!=='undefined'&&L=='ar';return h.slice(0,p)+'<div class="pnr"><button class="btn alt" onclick="prevq()">'+(ar?'السابق':'Previous')+'</button>'+nb+'</div>'+h.slice(e)}}catch(e){console.error('prev',e)}})();
+
+(function(){var s=document.createElement('script');s.src='11-done.js';document.head.appendChild(s)})();
