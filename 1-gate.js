@@ -1,3 +1,9 @@
+(function(){try{var U='https://ckltdtdrektkjupjywgd.supabase.co/rest/v1/rpc/',KY='sb_publishable_uzJ-tolS1O9xkr8SKC_EjQ_G5Tonit3',of=window.fetch.bind(window),ca={t:null,p:null};
+window.__fqRoleP=function(){var t=null;try{t=localStorage.getItem('fq_token')}catch(e){}if(!t)return Promise.resolve(null);if(ca.t===t&&ca.p)return ca.p;ca.t=t;
+ca.p=of(U+'check',{method:'POST',headers:{apikey:KY,'Content-Type':'application/json'},body:JSON.stringify({t:t})}).then(function(r){return r.json()}).then(function(c){if(c&&c.ok){window.__fqrole=c.role;return{role:c.role,username:c.username}}ca.p=null;return null}).catch(function(){ca.p=null;return null});return ca.p};
+window.fetch=function(u,o){var s=typeof u==='string'?u:(u&&u.url)||'',m=s.match(/\/rpc\/(save_prog|load_prog)$/);if(!m)return of(u,o);
+return window.__fqRoleP().then(function(c){if(c&&c.role==='owner'){if(m[1]=='load_prog'){try{localStorage.removeItem('fq_prog_v1_'+c.username)}catch(e){}}
+return new Response(JSON.stringify(m[1]=='load_prog'?{ok:true,rows:{}}:{ok:true}),{status:200,headers:{'Content-Type':'application/json'}})}return of(u,o)})}}catch(e){console.error('fqrole',e)}})();
 (function(){
 var URL_='https://ckltdtdrektkjupjywgd.supabase.co',KEY='sb_publishable_uzJ-tolS1O9xkr8SKC_EjQ_G5Tonit3',TK='fq_token';
 function rpc(n,a){return fetch(URL_+'/rest/v1/rpc/'+n,{method:'POST',headers:{'apikey':KEY,'Content-Type':'application/json'},body:JSON.stringify(a)}).then(function(r){return r.json()});}
